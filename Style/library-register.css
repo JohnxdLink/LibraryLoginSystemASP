@@ -1,0 +1,102 @@
+﻿/* Global styles */
+* {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background: url('../Images/Background/Background Register.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5d7db;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styles */
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #1b3358;
+}
+
+/* Row styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* Column styles */
+.col-25 {
+    flex: 25%;
+    max-width: 25%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.col-75 {
+    flex: 75%;
+    max-width: 75%;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1b3358;
+}
+
+/* Textbox styles */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.button {
+    font-size: 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #1b3358;
+    color: #f5d7db;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#btnEdit:hover {
+    background-color: #00ff00;
+}
+
+#btnClear:hover {
+    background-color: #ff0000;
+}
+
+#btnRegister:hover {
+    background-color: #06142e;
+}
+
+#btnLogin:hover {
+    background-color: #00ff00;
+}

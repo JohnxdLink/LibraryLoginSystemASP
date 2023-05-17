@@ -1,0 +1,189 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*
+    Color Palletes:
+    #006142e || #1b3358 || #473e66 || #bd83b8 || #f5d7db || #f1916d
+*/
+
+body {
+    background: url('../Images/Background/Background Login.jpg');
+    background-size: cover;
+}
+
+/*Whole Container*/
+.whole-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Left & Right Column*/
+.left-column {
+    width: 40%;
+    order: 1;
+}
+
+.right-column {
+    width: 60%;
+    order: 2;
+}
+
+/*Left Column*/
+
+/*Label ID*/
+.lbls {
+    margin-left: 25px;
+    margin-right: 10px;
+    color: #f5d7db;
+    font-size: 30px;
+}
+
+/*Text Box*/
+.txb_search_design {
+    margin-bottom: 15px;
+    font-size: 30px;
+    background: #f5d7db;
+    color: #06142e;
+    border-radius: 20px;
+}
+
+/*Button Design Login*/
+.btn_design {
+    font-size: 25px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+#Btn_login {
+    background: #473e66;
+    color: #00ff00;
+}
+
+    #Btn_login:hover {
+        background: #00ff00;
+        color: #473e66;
+    }
+
+#Btn_logout {
+    background: #bd83b8;
+    color: #ff0000;
+}
+
+    #Btn_logout:hover {
+        background: #ff0000;
+        color: #bd83b8;
+    }
+
+/*Button Design Exit Register*/
+.btn_ext_design {
+    margin-right: 20px;
+    width: 170px;
+    height: 40px;
+    background: #ff0000;
+    color: #f5d7db;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.btn_reg_design {
+    width: 260px;
+    height: 40px;
+    background: #f5d7db;
+    color: #06142e;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#Btn_exit:hover {
+    background: #f5d7db;
+    color: #ff0000;
+}
+
+#Btn_register:hover {
+    background: #06142e;
+    color: #f5d7db;
+}
+/*Right Column*/
+/*Login Container*/
+.login-container {
+    margin-top: 40px;
+    width: 97%;
+    height: 280px;
+    background: #473e66;
+    border: 3px solid #f5d7db;
+    border-radius: 15px;
+}
+
+.login_profile {
+    margin: 15px;
+    width: 250px;
+    height: 250px;
+    background: #f5d7db;
+    border-radius: 10px;
+}
+
+.login_form_icons, .logout_form_icons {
+    width: 40px;
+    height: 40px;
+}
+
+.lbl_user_log {
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+    color: #bd83b8;
+}
+
+.lbl_recent_user_log {
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+    color: #06142e;
+}
+
+.login-form-group div, .logout-form-group div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/*Logout Container*/
+.logout-container {
+    margin-top: 15px;
+    width: 97%;
+    height: 280px;
+    background: #bd83b8;
+    border: 3px solid #f5d7db;
+    border-radius: 15px;
+}
+
+.logout_profile {
+    margin: 15px;
+    width: 250px;
+    height: 250px;
+    background: #f5d7db;
+    border-radius: 10px;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 760) {
+    .left-column {
+        width: 100%;
+        order: 2;
+    }
+
+    .right-column {
+        width: 100%;
+        order: 1;
+    }
+}

@@ -1,0 +1,88 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #06142e;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+
+.timedate {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.digital-clock {
+    color: #db83b8;
+    margin-top: 15px;
+    font-size: 50px;
+}
+
+.date {
+    color: #473e66;
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+}
+
+.systemindicator {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo-image {
+    text-align: center;
+}
+
+.logo-name {
+    font-family: 'Spartan MB';
+    font-size: 40px;
+    color: #e29849;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.tagline {
+    font-family: 'High Tower Text';
+    font-size: 30px;
+    color: #e29849;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logandregister {
+    text-align: center;
+}
+
+    .logandregister #Btn_Login, #Btn_Register {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border: 3px solid #e29849;
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+
+        .logandregister #Btn_Login:hover {
+            border: 3px solid #00ff00;
+            background-color: #00ff00;
+        }
+
+        .logandregister #Btn_Register:hover {
+            border: 3px solid #ff0000;
+            background-color: #ff0000;
+        }
