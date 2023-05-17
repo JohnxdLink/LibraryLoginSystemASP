@@ -139,6 +139,7 @@
     <Content Include="Images\Student Images\777022.jpg" />
     <Content Include="Images\Student Images\777023.jpg" />
     <Content Include="Images\Student Images\777024.jpg" />
+    <Content Include="Images\Student Images\777025.jpg" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
     <Content Include="Style\library-close.css" />
     <Content Include="Style\library-login.css" />
