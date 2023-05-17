@@ -45,17 +45,8 @@ namespace Library_Login_System.Views
         {
             try
             {
+                // Calls the method to update the time and date
                 Update_time();
-                // Check if the current time is outside the allowed hours (7am - 5pm)
-                DateTime currentTime = DateTime.Now;
-                TimeSpan startTime = new TimeSpan(7, 0, 0); // 7am
-                TimeSpan endTime = new TimeSpan(17, 0, 0); // 5pm
-
-                if (currentTime.TimeOfDay < startTime || currentTime.TimeOfDay > endTime)
-                {
-                    // Redirect the user to another page or show a message indicating that access is restricted
-                    Response.Redirect("library-close.aspx");
-                }
 
             }
             catch (Exception ex)

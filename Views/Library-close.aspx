@@ -42,11 +42,11 @@
             </div>
 
             <div class="logo-name">
-                <asp:Label ID="Lbl_Logo_name" runat="server" Text="SORRY StoryVerse CLOSE"></asp:Label>
+                <asp:Label ID="Lbl_Logo_name" runat="server" Text="StoryVerse library is unavailable."></asp:Label>
             </div>
 
             <div class="tagline">
-                <asp:Label ID="Lbl_tagline" runat="server" Text="TIME OPEN: 7:00: AM - 5:00PM"></asp:Label>
+                <asp:Label ID="Lbl_tagline" runat="server" Text="TIME OPEN: 7:00AM - 5:00PM"></asp:Label>
             </div>
         </div>
     </form>
