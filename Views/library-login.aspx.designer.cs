@@ -141,13 +141,13 @@ namespace Library_Login_System.Views
         protected global::System.Web.UI.WebControls.Image Img_Login;
 
         /// <summary>
-        /// Image3 control.
+        /// Status_Login_Notify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
+        protected global::System.Web.UI.WebControls.Image Status_Login_Notify;
 
         /// <summary>
         /// Lbl_status control.
@@ -231,13 +231,13 @@ namespace Library_Login_System.Views
         protected global::System.Web.UI.WebControls.Label Lbl_year_login;
 
         /// <summary>
-        /// Image8 control.
+        /// Login_timelog_Notify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image8;
+        protected global::System.Web.UI.WebControls.Image Login_timelog_Notify;
 
         /// <summary>
         /// Lbl_timein control.
@@ -258,13 +258,13 @@ namespace Library_Login_System.Views
         protected global::System.Web.UI.WebControls.Image Img_Logout;
 
         /// <summary>
-        /// Image9 control.
+        /// Status_Logout_Notify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image9;
+        protected global::System.Web.UI.WebControls.Image Status_Logout_Notify;
 
         /// <summary>
         /// Lbl_recent_status control.
@@ -348,13 +348,13 @@ namespace Library_Login_System.Views
         protected global::System.Web.UI.WebControls.Label Lbl_recent_year;
 
         /// <summary>
-        /// Image14 control.
+        /// Logout_timelog_Notify control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image14;
+        protected global::System.Web.UI.WebControls.Image Logout_timelog_Notify;
 
         /// <summary>
         /// Lbl_timeout control.

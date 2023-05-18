@@ -117,6 +117,7 @@ namespace Library_Login_System.Views
                     Lbl_notify.Text = "ACCESS GRANTED";
                     Lbl_notify.ForeColor = System.Drawing.ColorTranslator.FromHtml("#00ff00");
 
+                    Status_Login_Notify.ImageUrl = "~/Images/Icons/status-login.png";
                     Lbl_status.Text = "LOGGED IN";
 
                     // Set the image URL based 
@@ -156,6 +157,7 @@ namespace Library_Login_System.Views
                     if (objTimein != null)
                     {
                         // Set the Time_in label to display the retrieved value
+                        Login_timelog_Notify.ImageUrl = "~/Images/Icons/login-timelog.png";
                         Lbl_timein.Text = objTimein.ToString();
                     }
                 }
@@ -236,6 +238,7 @@ namespace Library_Login_System.Views
                     if (sqlreader.Read())
                     {
                         // If a time-in entry exists
+                        Status_Logout_Notify.ImageUrl = "~/Images/Icons/status-logout.png";
                         Lbl_notify.Text = "SIGNING OUT";
                         Lbl_notify.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ff0000");
 
@@ -265,6 +268,7 @@ namespace Library_Login_System.Views
                         sqlreader.Close();
 
                         updateTimeoutCmd.ExecuteNonQuery();
+                        Logout_timelog_Notify.ImageUrl = "~/Images/Icons/logout-recent-timelog.png";
                         Lbl_timeout.Text = DateTime.Now.ToString("HH:mm:ss");
                     }
                     else

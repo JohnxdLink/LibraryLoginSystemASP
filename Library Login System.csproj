@@ -102,9 +102,13 @@
     <Content Include="Images\Icons\course photo.png" />
     <Content Include="Images\Icons\course year.PNG" />
     <Content Include="Images\Icons\course.png" />
+    <Content Include="Images\Icons\default-status-login.png" />
+    <Content Include="Images\Icons\default-status-logout.png" />
     <Content Include="Images\Icons\home.PNG" />
     <Content Include="Images\Icons\id.png" />
     <Content Include="Images\Icons\library.png" />
+    <Content Include="Images\Icons\login-timelog.PNG" />
+    <Content Include="Images\Icons\logout-recent-timelog.png" />
     <Content Include="Images\Icons\name.png" />
     <Content Include="Images\Icons\proceed.PNG" />
     <Content Include="Images\Icons\recent-course.png" />

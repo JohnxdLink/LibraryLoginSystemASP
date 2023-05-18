@@ -72,7 +72,7 @@
                     <div class="col-75">
                         <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/Icons/course notify.png" Height="30px" Width="30px" ImageAlign="Left" Style="margin-right: 5px;" />
                         <label for="txtNotification">NOTIFICATION</label>
-                        <asp:Label ID="register_notify" runat="server" Text="" Font-Size="XX-Large"></asp:Label>
+                        <asp:Label ID="register_notify" runat="server" Text="CLICK EDIT" Font-Size="X-Large" ForeColor="#1b3358"></asp:Label>
                     </div>
                 </div>
                 <div class="row">

@@ -49,6 +49,9 @@ namespace Library_Login_System.Views
         //This method toggles the read-only property of several textboxes on and off based on their current state when the "btnEdit" button is clicked.
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+
+            register_notify.Text = "EDIT MODE";
+            register_notify.ForeColor = System.Drawing.ColorTranslator.FromHtml("#00ff00");
             bool isReadOnly = !(txtLastName.ReadOnly && txtFirstName.ReadOnly && txtCourse.ReadOnly && txtYear.ReadOnly && txtMajor.ReadOnly);
             txtLastName.ReadOnly = isReadOnly;
             txtFirstName.ReadOnly = isReadOnly;
@@ -146,7 +149,8 @@ namespace Library_Login_System.Views
         // Clear all text fields
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            register_notify.Text = "";
+            register_notify.Text = "CLICK EDIT";
+            register_notify.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1b3358");
             txtId.Text = "";
             txtLastName.Text = "";
             txtFirstName.Text = "";
