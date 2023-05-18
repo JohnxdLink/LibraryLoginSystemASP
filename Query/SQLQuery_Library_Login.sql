@@ -56,6 +56,3 @@ INSERT INTO timelog(Id_no, Time_in, Date_log)
 VALUES(777000, FORMAT(GETDATE(), 'HH:mm:ss'), CONVERT(DATE, GETDATE()));
 
 */
-
-
-SELECT * FROM timelog;

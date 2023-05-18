@@ -202,7 +202,6 @@ namespace Library_Login_System.Views
             // Insert a new time log entry with time-in and time-out values
             string sqlInsertTimeLog = "INSERT INTO timelog (Id_no, Time_in, Time_out, Date_log) VALUES (@Id_no, CONVERT(varchar(8), GETDATE(), 108), CONVERT(varchar(8), GETDATE(), 108), CONVERT(date, GETDATE()));";
 
-
             // Parameterize the Id_no value 
             SqlCommand checkTimeInCmd = new SqlCommand(sqlCheckTimeIn, db_con);
             checkTimeInCmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
@@ -303,7 +302,6 @@ namespace Library_Login_System.Views
                 db_con.Dispose();
             }
         }
-
 
         protected void Btn_register_Click(object sender, EventArgs e)
         {
