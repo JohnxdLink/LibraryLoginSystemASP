@@ -132,7 +132,7 @@ namespace Library_Login_System.Views
                     // Execute the SQL query to insert a new time log entry
                     timeincmd.ExecuteNonQuery();
 
-                    Lbl_timein.Text = DateTime.Now.ToString("HH:mm:ss");
+                    Lbl_timein.Text = DateTime.Now.ToString("h:mm:ss tt");
                 }
                 else
                 {
@@ -199,9 +199,29 @@ namespace Library_Login_System.Views
                     string timeIn = timeInReader["Time_in"].ToString();
                     timeInReader.Close();
 
+                    // Check if the user has already logged out
+                    string sqlCheckTimeout = "SELECT Time_out FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()) AND Time_in = @Time_in;";
+                    SqlCommand checkTimeoutCmd = new SqlCommand(sqlCheckTimeout, db_con);
+                    checkTimeoutCmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
+                    checkTimeoutCmd.Parameters.Add("@Time_in", SqlDbType.NVarChar, 8).Value = timeIn;
+
+                    SqlDataReader timeoutReader = checkTimeoutCmd.ExecuteReader();
+
+                    if (timeoutReader.Read() && !timeoutReader.IsDBNull(0))
+                    {
+                        // Time_out value is already set, indicating that the user has already logged out
+                        Lbl_notify.Text = "ACCESS DENIED";
+                        Lbl_notify.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ff0000");
+
+                        timeoutReader.Close();
+                        return; // Exit the method to prevent further execution
+                    }
+
+                    timeoutReader.Close();
+
                     string sqlQuery = "SELECT Id_no, Last_name, First_name, Course, School_year, Major FROM registration WHERE Id_no = @Id_no;";
 
-                    // SqlCommand to insert new time log entry
+                    // SqlCommand to retrieve user information
                     SqlCommand cmd = new SqlCommand(sqlQuery, db_con);
 
                     // Parameterize the Id_no value
@@ -246,7 +266,7 @@ namespace Library_Login_System.Views
                         updateTimeoutCmd.ExecuteNonQuery();
 
                         Logout_timelog_Notify.ImageUrl = "~/Images/Icons/logout-recent-timelog.png";
-                        Lbl_timeout.Text = DateTime.Now.ToString("HH:mm:ss");
+                        Lbl_timeout.Text = DateTime.Now.ToString("h:mm:ss tt");
                     }
                     else
                     {
@@ -265,7 +285,7 @@ namespace Library_Login_System.Views
             }
             catch (SqlException sqlex)
             {
-                Response.Write("Database Error Occured: " + sqlex);
+                Response.Write("Database Error Occurred: " + sqlex);
             }
             finally
             {
@@ -280,6 +300,7 @@ namespace Library_Login_System.Views
                 db_con.Dispose();
             }
         }
+
 
 
         protected void Btn_register_Click(object sender, EventArgs e)
