@@ -23,6 +23,17 @@ namespace Library_Login_System.Views
                 // Call the time
                 Update_time();
 
+                // Check if the current time is outside the allowed hours (7am - 5pm)
+                DateTime currentTime = DateTime.Now;
+                TimeSpan startTime = new TimeSpan(7, 0, 0); // 7am
+                TimeSpan endTime = new TimeSpan(17, 0, 0); // 5pm
+
+                if (currentTime.TimeOfDay < startTime || currentTime.TimeOfDay > endTime)
+                {
+                    // Redirect the user to another page or show a message indicating that access is restricted
+                    Response.Redirect("library-close.aspx");
+                }
+
             }
             catch (Exception ex)
             {
@@ -44,10 +55,7 @@ namespace Library_Login_System.Views
             }
         }
 
-        /*
-         Timer1_Tick updates time & date by calling UpdateTime method, which formats the current time using ToString method, and refreshes the labels.
-         */
-
+        // Timer1_Tick updates time & date by calling UpdateTime method
         private void Update_time()
         {
             var now = DateTime.Now; // Get the current date and time
@@ -163,7 +171,6 @@ namespace Library_Login_System.Views
                 db_con.Dispose(); // Dispose the SqlConnection
             }
         }
-
 
         protected void Btn_logout_Click(object sender, EventArgs e)
         {
@@ -300,8 +307,6 @@ namespace Library_Login_System.Views
                 db_con.Dispose();
             }
         }
-
-
 
         protected void Btn_register_Click(object sender, EventArgs e)
         {
