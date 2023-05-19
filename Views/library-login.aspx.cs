@@ -23,17 +23,6 @@ namespace Library_Login_System.Views
                 // Call the time
                 Update_time();
 
-                // Check if the current time is outside the allowed hours (7am - 5pm)
-                DateTime currentTime = DateTime.Now;
-                TimeSpan startTime = new TimeSpan(7, 0, 0); // 7am
-                TimeSpan endTime = new TimeSpan(17, 0, 0); // 5pm
-
-                if (currentTime.TimeOfDay < startTime || currentTime.TimeOfDay > endTime)
-                {
-                    // Redirect the user to another page or show a message indicating that access is restricted
-                    Response.Redirect("library-close.aspx");
-                }
-
             }
             catch (Exception ex)
             {
@@ -83,21 +72,11 @@ namespace Library_Login_System.Views
 
         protected void Btn_login_Click(object sender, EventArgs e)
         {
-
             // SQL query to retrieve student information
             string sqlQuery = "SELECT Id_no, Last_name, First_name, Course, School_year, Major FROM registration WHERE Id_no = @Id_no;";
 
-            // SQL query to update time in or insert a new time log entry
-            string sqlTimein = "IF EXISTS (SELECT * FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE())) " +
-                   "BEGIN " +
-                   "UPDATE timelog SET Time_in = CONVERT(varchar(8), GETDATE(), 108) WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()); " +
-                   "SELECT Time_in FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()) " +
-                   "END " +
-                   "ELSE " +
-                   "BEGIN " +
-                   "INSERT INTO timelog (Id_no, Time_in, Date_log) VALUES (@Id_no, CONVERT(varchar(8), GETDATE(), 108), CONVERT(date, GETDATE())); " +
-                   "SELECT Time_in FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()) " +
-                   "END;";
+            // SQL query to insert a new time log entry
+            string sqlTimein = "INSERT INTO timelog (Id_no, Time_in, Date_log) VALUES (@Id_no, CONVERT(varchar(8), GETDATE(), 108), CONVERT(date, GETDATE()));";
 
             SqlCommand cmd = new SqlCommand(sqlQuery, db_con);
             cmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
@@ -150,16 +129,10 @@ namespace Library_Login_System.Views
                     // Close the SqlDataReader
                     sqlreader.Close();
 
-                    // Execute the SQL query to update time in or insert a new time log entry and retrieve the Time_in value
-                    object objTimein = timeincmd.ExecuteScalar();
+                    // Execute the SQL query to insert a new time log entry
+                    timeincmd.ExecuteNonQuery();
 
-
-                    if (objTimein != null)
-                    {
-                        // Set the Time_in label to display the retrieved value
-                        Login_timelog_Notify.ImageUrl = "~/Images/Icons/login-timelog.png";
-                        Lbl_timein.Text = objTimein.ToString();
-                    }
+                    Lbl_timein.Text = DateTime.Now.ToString("HH:mm:ss");
                 }
                 else
                 {
@@ -175,13 +148,13 @@ namespace Library_Login_System.Views
             }
             catch (SqlException sqlex)
             {
-                Response.Write("Database Error Occured: " + sqlex);
+                Response.Write("Database Error Occurred: " + sqlex);
             }
             finally
             {
-
                 // Dispose the SqlCommand
                 cmd.Dispose();
+                timeincmd.Dispose();
 
                 if (db_con.State != System.Data.ConnectionState.Closed)
                 {
@@ -191,13 +164,14 @@ namespace Library_Login_System.Views
             }
         }
 
+
         protected void Btn_logout_Click(object sender, EventArgs e)
         {
             // Check if a time-in entry exists for the current date
-            string sqlCheckTimeIn = "SELECT Time_in FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE());";
+            string sqlCheckTimeIn = "SELECT TOP 1 Time_in FROM timelog WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()) ORDER BY Time_in DESC;";
 
-            // Update the time-out value for the current date
-            string sqlUpdateTimeout = "UPDATE timelog SET Time_out = CONVERT(varchar(8), GETDATE(), 108) WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE());";
+            // Update the time-out value for the current date and latest time-in entry
+            string sqlUpdateTimeout = "UPDATE timelog SET Time_out = CONVERT(varchar(8), GETDATE(), 108) WHERE Id_no = @Id_no AND Date_log = CONVERT(date, GETDATE()) AND Time_in = @Time_in;";
 
             // Insert a new time log entry with time-in and time-out values
             string sqlInsertTimeLog = "INSERT INTO timelog (Id_no, Time_in, Time_out, Date_log) VALUES (@Id_no, CONVERT(varchar(8), GETDATE(), 108), CONVERT(varchar(8), GETDATE(), 108), CONVERT(date, GETDATE()));";
@@ -208,6 +182,7 @@ namespace Library_Login_System.Views
 
             SqlCommand updateTimeoutCmd = new SqlCommand(sqlUpdateTimeout, db_con);
             updateTimeoutCmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
+            updateTimeoutCmd.Parameters.Add("@Time_in", SqlDbType.NVarChar, 8); // Add Time_in parameter
 
             SqlCommand insertTimeLogCmd = new SqlCommand(sqlInsertTimeLog, db_con);
             insertTimeLogCmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
@@ -266,7 +241,10 @@ namespace Library_Login_System.Views
                         Lbl_recent_year.Text = yearDisplay;
                         sqlreader.Close();
 
+                        // Update the timeout for the latest time-in entry
+                        updateTimeoutCmd.Parameters["@Time_in"].Value = timeIn;
                         updateTimeoutCmd.ExecuteNonQuery();
+
                         Logout_timelog_Notify.ImageUrl = "~/Images/Icons/logout-recent-timelog.png";
                         Lbl_timeout.Text = DateTime.Now.ToString("HH:mm:ss");
                     }
@@ -302,6 +280,7 @@ namespace Library_Login_System.Views
                 db_con.Dispose();
             }
         }
+
 
         protected void Btn_register_Click(object sender, EventArgs e)
         {

@@ -49,6 +49,8 @@ CREATE TABLE timelog (
 		Timelog_id INT IDENTITY(0, 1) PRIMARY KEY,
 		Time_in TIME,
 		Time_out TIME,
+		First_Time_in TIME,
+		Last_Time_out TIME,
 		Date_log DATE
 );
 
