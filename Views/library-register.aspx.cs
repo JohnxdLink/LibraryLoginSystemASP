@@ -127,7 +127,7 @@ namespace Library_Login_System.Views
                     txtPhoto.Text = id.ToString();
 
                     // Save the file and get the file path
-                    string filePath = SaveFile(id.ToString()); // Pass the new Id_no as the parameter
+                    string filePath = SaveFile(id.ToString()); // Pass the new Id_no as the parameter - Optional
 
                 }
             }
@@ -147,23 +147,31 @@ namespace Library_Login_System.Views
             }
         }
 
+        // using System.IO - Provides classes for working with files and directories
         private string SaveFile(string fileName)
         {
+
+            // Check if a file has been uploaded
             if (UploadingFile.HasFile)
             {
-                string fileExtension = Path.GetExtension(UploadingFile.FileName);
-                string newFileName = fileName + fileExtension; // Use the new insert ID as the file name
 
+                // Get the file extension
+                string fileExtension = Path.GetExtension(UploadingFile.FileName);
+
+                // Use the new insert ID as the file name
+                string newFileName = fileName + fileExtension;
+
+                // Get the server file path
                 string filePath = Server.MapPath("~/Images/Student Images/") + newFileName;
+
+                // Save the uploaded file to the specified path
                 UploadingFile.SaveAs(filePath);
 
                 return filePath;
             }
 
-            return string.Empty;
+            return string.Empty; // If no file has been uploaded, return an empty string
         }
-
-
 
         // Clear all text fields
         protected void btnClear_Click(object sender, EventArgs e)
