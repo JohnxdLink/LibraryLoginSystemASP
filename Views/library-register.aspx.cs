@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace Library_Login_System.Views
 {
@@ -61,7 +62,6 @@ namespace Library_Login_System.Views
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-
             // SQL query to select an existing registration with matching Last Name, First Name, Course, School Year and Major
             string query = "SELECT Id_no FROM registration WHERE Last_name = @Last_name AND First_name = @First_name AND Course = @Course AND School_year = @School_year AND Major = @Major";
 
@@ -106,9 +106,6 @@ namespace Library_Login_System.Views
                 }
                 else // If no existing registration found, insert a new registration into the database
                 {
-
-                    // SQL query to insert a new registration into the database and return the new Id_no value
-
                     // Reuse the SqlCommand object with a new SQL query and SqlParameter objects
                     cmd.Parameters.Clear();
                     query = "INSERT INTO registration (Last_name, First_name, Course, School_year, Major) VALUES (@Last_name, @First_name, @Course, @School_year, @Major); SELECT SCOPE_IDENTITY()";
@@ -128,11 +125,15 @@ namespace Library_Login_System.Views
 
                     txtId.Text = id.ToString();
                     txtPhoto.Text = id.ToString();
+
+                    // Save the file and get the file path
+                    string filePath = SaveFile(id.ToString()); // Pass the new Id_no as the parameter
+
                 }
             }
             catch (SqlException sqlex)
             {
-                Response.Write("Database Error Occured: " + sqlex);
+                Response.Write("Database Error Occurred: " + sqlex);
             }
             finally
             {
@@ -145,6 +146,24 @@ namespace Library_Login_System.Views
                 db_con.Dispose();
             }
         }
+
+        private string SaveFile(string fileName)
+        {
+            if (UploadingFile.HasFile)
+            {
+                string fileExtension = Path.GetExtension(UploadingFile.FileName);
+                string newFileName = fileName + fileExtension; // Use the new insert ID as the file name
+
+                string filePath = Server.MapPath("~/Images/Student Images/") + newFileName;
+                UploadingFile.SaveAs(filePath);
+
+                return filePath;
+            }
+
+            return string.Empty;
+        }
+
+
 
         // Clear all text fields
         protected void btnClear_Click(object sender, EventArgs e)

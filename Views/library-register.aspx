@@ -67,6 +67,7 @@
                         <asp:Image ID="Image7" runat="server" ImageUrl="~/Images/Icons/course photo.png" Height="30px" Width="30px" ImageAlign="Left" Style="margin-right: 5px;" />
                         <label for="txtPhoto">PHOTO</label>
                         <asp:TextBox ID="txtPhoto" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:FileUpload ID="UploadingFile" runat="server" />
                     </div>
 
                     <div class="col-75">
