@@ -140,6 +140,8 @@ namespace Library_Login_System.Views
                     // Execute the SQL query to insert a new time log entry
                     timeincmd.ExecuteNonQuery();
 
+
+                    Login_timelog_Notify.ImageUrl = "~/Images/Icons/login-timelog.png";
                     Lbl_timein.Text = DateTime.Now.ToString("h:mm:ss tt");
                 }
                 else
