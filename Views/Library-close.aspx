@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Library-close.aspx.cs" Inherits="Library_Login_System.Views.Library_close" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="library-close.aspx.cs" Inherits="Library_Login_System.Views.Library_close" %>
 
 <!DOCTYPE html>
 
