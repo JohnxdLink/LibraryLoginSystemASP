@@ -152,7 +152,7 @@
     <Content Include="Images\Student Images\777033.JPG" />
     <Content Include="Images\Student Images\777034.JPG" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
-    <Content Include="Style\Admin-Styles\admin-layout.css" />
+    <Content Include="Style\Admin-Styles\admin-home.css" />
     <Content Include="Style\library-close.css" />
     <Content Include="Style\library-login.css" />
     <Content Include="Style\library-register.css" />
