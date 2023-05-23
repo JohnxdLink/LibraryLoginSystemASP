@@ -95,12 +95,6 @@
   <ItemGroup>
     <Content Include="Images\Background\Background Login.jpg" />
     <Content Include="Images\Background\Background Register.jpg" />
-    <Content Include="Images\Background\display-registered.JPG" />
-    <Content Include="Images\Background\display-timelog.JPG" />
-    <Content Include="Images\Icons\admin-default.png" />
-    <Content Include="Images\Icons\admin-status-login.PNG" />
-    <Content Include="Images\Icons\admin-status-register.PNG" />
-    <Content Include="Images\Icons\adming-status-library.PNG" />
     <Content Include="Images\Icons\course id.PNG" />
     <Content Include="Images\Icons\course major.PNG" />
     <Content Include="Images\Icons\course name.PNG" />
@@ -121,7 +115,6 @@
     <Content Include="Images\Icons\recent-id.png" />
     <Content Include="Images\Icons\recent-name.png" />
     <Content Include="Images\Icons\course course.PNG" />
-    <Content Include="Images\Icons\refresh.png" />
     <Content Include="Images\Icons\register sign.PNG" />
     <Content Include="Images\Icons\status-login.png" />
     <Content Include="Images\Icons\recent-timelog.png" />
@@ -156,6 +149,8 @@
     <Content Include="Images\Student Images\777029.jpg" />
     <Content Include="Images\Student Images\777030.jpg" />
     <Content Include="Images\Student Images\777031.jpg" />
+    <Content Include="Images\Student Images\777033.JPG" />
+    <Content Include="Images\Student Images\777034.JPG" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
     <Content Include="Style\Admin-Styles\admin-layout.css" />
     <Content Include="Style\library-close.css" />
