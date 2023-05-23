@@ -95,6 +95,9 @@
   <ItemGroup>
     <Content Include="Images\Background\Background Login.jpg" />
     <Content Include="Images\Background\Background Register.jpg" />
+    <Content Include="Images\Background\display-registered.JPG" />
+    <Content Include="Images\Background\display-timelog.JPG" />
+    <Content Include="Images\Icons\admin-default.png" />
     <Content Include="Images\Icons\admin-status-login.PNG" />
     <Content Include="Images\Icons\admin-status-register.PNG" />
     <Content Include="Images\Icons\adming-status-library.PNG" />
@@ -118,6 +121,7 @@
     <Content Include="Images\Icons\recent-id.png" />
     <Content Include="Images\Icons\recent-name.png" />
     <Content Include="Images\Icons\course course.PNG" />
+    <Content Include="Images\Icons\refresh.png" />
     <Content Include="Images\Icons\register sign.PNG" />
     <Content Include="Images\Icons\status-login.png" />
     <Content Include="Images\Icons\recent-timelog.png" />
@@ -153,12 +157,12 @@
     <Content Include="Images\Student Images\777030.jpg" />
     <Content Include="Images\Student Images\777031.jpg" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
-    <Content Include="Style\library-admin.css" />
+    <Content Include="Style\Admin-Styles\admin-layout.css" />
     <Content Include="Style\library-close.css" />
     <Content Include="Style\library-login.css" />
     <Content Include="Style\library-register.css" />
     <Content Include="Style\library-home.css" />
-    <Content Include="Views\library-admin.aspx" />
+    <Content Include="Views\Admins\admin-home.aspx" />
     <Content Include="Views\library-close.aspx" />
     <Content Include="Views\library-home.aspx" />
     <Content Include="Views\library-login.aspx" />
@@ -167,12 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\library-admin.aspx.cs">
-      <DependentUpon>library-admin.aspx</DependentUpon>
+    <Compile Include="Views\Admins\admin-home.aspx.cs">
+      <DependentUpon>admin-home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\library-admin.aspx.designer.cs">
-      <DependentUpon>library-admin.aspx</DependentUpon>
+    <Compile Include="Views\Admins\admin-home.aspx.designer.cs">
+      <DependentUpon>admin-home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\library-close.aspx.cs">
       <DependentUpon>library-close.aspx</DependentUpon>

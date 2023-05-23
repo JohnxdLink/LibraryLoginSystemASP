@@ -1,0 +1,50 @@
+﻿/*Color Pallete: #06142e || #1b3358 || #473e66 || #bd83b8 || #f5d7db || #f1916d */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #f1916d;
+}
+
+/* Define the styles for the layout */
+.whole-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.aside-left-15 {
+    height: 574px;
+    flex-basis: 15%;
+    background-color: #06142e;
+}
+
+.main-60 {
+    height: 574px;
+    flex-basis: 60%;
+    background-color: #473e66;
+}
+
+.aside-right-25 {
+    height: 574px;
+    flex-basis: 25%;
+    background-color: #06142e;
+}
+
+.footer-5 {
+    padding: 5px;
+    flex-basis: 100%;
+    background-color: #1b3358;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .aside-left-15,
+    .main-60,
+    .aside-right-25 {
+        height: auto;
+        flex-basis: 100%;
+    }
+}
