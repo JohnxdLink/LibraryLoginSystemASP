@@ -1,0 +1,105 @@
+﻿/*Color Pallete: #06142e || #1b3358 || #473e66 || #bd83b8 || #f5d7db || #f1916d */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #f1916d;
+}
+
+/* Define the styles for the layout */
+.whole-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Aside Left */
+.aside-left-15 {
+    height: 635px;
+    flex-basis: 15%;
+    background-color: #06142e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo Image */
+.logo-img {
+    margin-bottom: auto;
+}
+
+#btn_logout {
+    border-bottom: 0px solid #f1916d;
+    margin-top: 200px;
+}
+
+/* Button Design */
+.button-design {
+    width: 100%;
+    background-color: transparent;
+    color: #f1916d;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid #f1916d;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+#btn_timelog {
+    background-color: #bd83b8;
+}
+
+#btn_home:hover {
+    background-color: #1b3358;
+}
+
+#btn_register:hover {
+    background-color: #473e66;
+}
+
+#btn_timelog:hover {
+    background-color: #bd83b8;
+}
+
+#btn_graph:hover {
+    background-color: #f5d7db;
+}
+
+#btn_logout:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+
+.main-60 {
+    height: 635px;
+    flex-basis: 60%;
+    background-color: #bd83b8;
+}
+
+.aside-right-25 {
+    height: 635px;
+    flex-basis: 25%;
+    background-color: #06142e;
+}
+
+.footer-5 {
+    padding: 5px;
+    flex-basis: 100%;
+    background-color: #f1916d;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .aside-left-15,
+    .main-60,
+    .aside-right-25 {
+        height: auto;
+        flex-basis: 100%;
+    }
+}

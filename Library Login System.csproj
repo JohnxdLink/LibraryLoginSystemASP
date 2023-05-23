@@ -152,12 +152,18 @@
     <Content Include="Images\Student Images\777033.JPG" />
     <Content Include="Images\Student Images\777034.JPG" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
+    <Content Include="Style\Admin-Styles\admin-graph.css" />
+    <Content Include="Views\Admins\admin-graph.aspx" />
     <Content Include="Style\Admin-Styles\admin-home.css" />
+    <Content Include="Style\Admin-Styles\admin-register.css" />
+    <Content Include="Style\Admin-Styles\admin-timelog.css" />
     <Content Include="Style\library-close.css" />
     <Content Include="Style\library-login.css" />
     <Content Include="Style\library-register.css" />
     <Content Include="Style\library-home.css" />
     <Content Include="Views\Admins\admin-home.aspx" />
+    <Content Include="Views\Admins\admin-register.aspx" />
+    <Content Include="Views\Admins\admin-timelog.aspx" />
     <Content Include="Views\library-close.aspx" />
     <Content Include="Views\library-home.aspx" />
     <Content Include="Views\library-login.aspx" />
@@ -166,12 +172,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Admins\admin-graph.aspx.cs">
+      <DependentUpon>admin-graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admins\admin-graph.aspx.designer.cs">
+      <DependentUpon>admin-graph.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admins\admin-home.aspx.cs">
       <DependentUpon>admin-home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Admins\admin-home.aspx.designer.cs">
       <DependentUpon>admin-home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admins\admin-register.aspx.cs">
+      <DependentUpon>admin-register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admins\admin-register.aspx.designer.cs">
+      <DependentUpon>admin-register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admins\admin-timelog.aspx.cs">
+      <DependentUpon>admin-timelog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admins\admin-timelog.aspx.designer.cs">
+      <DependentUpon>admin-timelog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\library-close.aspx.cs">
       <DependentUpon>library-close.aspx</DependentUpon>

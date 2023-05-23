@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Library_Login_System.Views.Admins
 {
-    public partial class admin_home : System.Web.UI.Page
+    public partial class admin_timelog : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

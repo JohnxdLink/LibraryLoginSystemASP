@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="admin-home.aspx.cs" Inherits="Library_Login_System.Views.Admins.admin_home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="admin-timelog.aspx.cs" Inherits="Library_Login_System.Views.Admins.admin_timelog" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="../../Style/Admin-Styles/admin-home.css" />
-    <title>Admin | Home</title>
+    <link rel="stylesheet" href="../../Style/Admin-Styles/admin-timelog.css" />
+    <title>Admin | Timelog</title>
 </head>
 <body>
     <form id="form1" runat="server">
-
         <div class="whole-container">
             <aside class="aside-left-15">
                 <div class="logo-img">
@@ -31,15 +30,13 @@
             </aside>
 
             <main class="main-60">
-
             </main>
 
             <aside class="aside-right-25">
-
             </aside>
 
             <footer class="footer-5">
-               Under Development: 05/23/2023
+                Under Development: 05/23/2023
             </footer>
 
         </div>

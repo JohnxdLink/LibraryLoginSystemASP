@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Library_Login_System.Views.Admins
+namespace Library_Login_System.Style.Admin_Styles
 {
-    public partial class admin_home : System.Web.UI.Page
+    public partial class admin_graph : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
