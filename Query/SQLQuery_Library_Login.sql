@@ -37,9 +37,9 @@ ON registration
 AFTER INSERT
 AS
 BEGIN
-    UPDATE registration
-    SET Photo_id = Id_no
-    WHERE Photo_id IS NULL;
+	UPDATE registration
+	SET Photo_id = Id_no
+	WHERE Photo_id IS NULL;
 END;
 
 EXEC sp_rename 'timelog.Data_log', 'Date_log', 'COLUMN';

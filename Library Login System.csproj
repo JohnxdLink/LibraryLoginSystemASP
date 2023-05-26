@@ -95,6 +95,13 @@
   <ItemGroup>
     <Content Include="Images\Background\Background Login.jpg" />
     <Content Include="Images\Background\Background Register.jpg" />
+    <Content Include="Images\Icons\admin-browse.PNG" />
+    <Content Include="Images\Icons\admin-registered.png" />
+    <Content Include="Images\Icons\admin-std-course.png" />
+    <Content Include="Images\Icons\admin-std-id.PNG" />
+    <Content Include="Images\Icons\admin-std-major.PNG" />
+    <Content Include="Images\Icons\admin-std-name.png" />
+    <Content Include="Images\Icons\admin-std-year.png" />
     <Content Include="Images\Icons\course id.PNG" />
     <Content Include="Images\Icons\course major.PNG" />
     <Content Include="Images\Icons\course name.PNG" />
@@ -106,6 +113,7 @@
     <Content Include="Images\Icons\default-status-logout.png" />
     <Content Include="Images\Icons\home.PNG" />
     <Content Include="Images\Icons\id.png" />
+    <Content Include="Images\Icons\library-status.PNG" />
     <Content Include="Images\Icons\library.png" />
     <Content Include="Images\Icons\login-timelog.PNG" />
     <Content Include="Images\Icons\logout-recent-timelog.png" />
@@ -151,6 +159,7 @@
     <Content Include="Images\Student Images\777031.jpg" />
     <Content Include="Images\Student Images\777033.JPG" />
     <Content Include="Images\Student Images\777034.JPG" />
+    <Content Include="Images\Student Images\777037.JPG" />
     <Content Include="Query\SQLQuery_Library_Login.sql" />
     <Content Include="Style\Admin-Styles\admin-graph.css" />
     <Content Include="Views\Admins\admin-graph.aspx" />

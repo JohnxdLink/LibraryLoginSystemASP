@@ -80,10 +80,103 @@
     background-color: #1b3358;
 }
 
+.inside-main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.inside-aside-left-50 {
+    flex-basis: 50%;
+    height: 250px; 
+    background-color: #1a1919;
+}
+
+.inside-aside-right-50 {
+    flex-basis: 50%;
+    height: 250px;
+    background-color: #26292c;
+}
+
+.inside-header {
+    flex-basis: 100%;
+    background-color: #393939;
+}
+
+.inside-footer {
+    flex-basis: 100%;
+    background-color: #1d191c;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.inside-footer-left-50 {
+    flex-basis: 50%;
+    height: 230px;
+    background-color: #1a1010;
+}
+
+.inside-footer-right-50 {
+    flex-basis: 50%;
+    height: 230px;
+    background-color: #211414;
+}
+    
+.time-date {
+    width: 100%;
+}
+
+#Lbl_library_status {
+    color: #ff0000;
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+}
+
+#Lbl_current_time {
+    color: #bd83b8;
+    font-size: 60px;
+    font-family: 'Bebas Neue';
+}
+
+#Lbl_current_date {
+    color: #473e66;
+    font-size: 30px;
+    font-family: 'Bebas Neue';
+}
+
+.srch-student-con {
+    width: 100%;
+}
+
+.std-dsply-design {
+    color: #f5d7db;
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+}
+
 .aside-right-25 {
     height: 635px;
     flex-basis: 25%;
     background-color: #06142e;
+}
+
+.view-login {
+    width: 100%;
+    height: 270px;
+    background-color: #190f0b;
+}
+
+.view-logout {
+    width: 100%;
+    height: 270px;
+    background-color: #260606;
+}
+
+.contact-dev {
+    width: 100%;
+    height: 95px;
+    background-color: #161515;
 }
 
 .footer-5 {

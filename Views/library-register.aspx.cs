@@ -127,7 +127,7 @@ namespace Library_Login_System.Views
                     txtPhoto.Text = id.ToString();
 
                     // Save the file and get the file path
-                    string filePath = SaveFile(id.ToString()); // Pass the new Id_no as the parameter - Optional
+                    string filePath = SaveFile(id.ToString()); // Pass the new Id_no as the parameter - Optional             
 
                 }
             }
