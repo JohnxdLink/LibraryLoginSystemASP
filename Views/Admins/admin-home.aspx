@@ -74,12 +74,13 @@
 
                     <!--Inside Aside Left-->
                     <aside class="inside-aside-left-50">
+
                         <!--Search Student-->
                         <div class="srch-student-con" style="margin-left: 10px;">
 
                             <!--Textbox Search & Browser Icon-->
                             <div class="srch-container" style="margin-bottom: 10px;">
-                                <asp:TextBox ID="Txb_search_id" runat="server" Style="margin-right: 10px;"></asp:TextBox>
+                                <asp:TextBox ID="Txb_search_id" runat="server" Style="margin-right: 10px;" ToolTip="Search ID" placeholder="Search ID"></asp:TextBox>
                                 <asp:ImageButton ID="Img_browse_id" runat="server" ImageUrl="~/Images/Icons/admin-browse.PNG" Height="40" Width="40" />
                             </div>
 
@@ -92,7 +93,7 @@
                                 </div>
 
                                 <!--Display Info Student-->
-                                <div class="stundet-info-container">
+                                <div class="student-info-container">
                                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Icons/admin-std-id.PNG" Height="30" Width="30" />
                                     <asp:Label ID="Lbl_std_id" runat="server" Text="777000" CssClass="std-dsply-design"></asp:Label>
                                     <br />
@@ -163,7 +164,8 @@
                         </div>
                     </aside>
                 </footer>
-            </main> <!--End Point Main-->
+            </main>
+            <!--End Point Main-->
 
             <aside class="aside-right-25">
                 <div class="view-login">
@@ -201,8 +203,6 @@
                     <asp:ImageButton ID="Img_btn_fb" runat="server" ImageUrl="~/Images/Icons/admin-facebook.PNG" Height="40" Width="40" />
                     <asp:ImageButton ID="Img_btn_git" runat="server" ImageUrl="~/Images/Icons/admin-github.PNG" Height="40" Width="40" />
                 </div>
-
-
             </aside>
 
             <footer class="footer-5">

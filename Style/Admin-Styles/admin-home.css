@@ -117,6 +117,7 @@
     height: 250px;
 }
 
+
 .srch-container {
     display: flex;
     align-items: center;
@@ -128,19 +129,18 @@
         vertical-align: middle;
     }
 
-
-.inside-aside-right-50 {
-    margin-top: 10px;
-    flex-basis: 36%;
-    height: 220px;
+#Txb_search_id {
     background-color: #473e66;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .inside-aside-right-50 {
     margin-top: 10px;
     flex-basis: 36%;
     height: 220px;
-    background-color: #473e66;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
