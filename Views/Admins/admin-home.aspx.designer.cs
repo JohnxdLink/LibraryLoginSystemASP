@@ -24,6 +24,15 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// img_btn_logo control.
         /// </summary>
         /// <remarks>
@@ -96,6 +105,15 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_library_status;
 
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
         /// Lbl_current_time control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace Library_Login_System.Views.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Lbl_current_date;
+
+        /// <summary>
+        /// Timer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer1;
 
         /// <summary>
         /// Txb_search_id control.

@@ -12,6 +12,7 @@
 
         <!--Whole Container-->
         <div class="whole-container">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
             <!--Aside Left-->
             <aside class="aside-left-15">
@@ -52,25 +53,34 @@
                         <!--Library Status: Available/Unvailable-->
                         <div class="library-status" style="margin-top: 10px; margin-left: 10px;">
                             <asp:Image ID="img_icon_library" runat="server" ImageUrl="~/Images/Icons/library-status.PNG" Height="30" Width="30" />
-                            <asp:Label ID="Lbl_library_status" runat="server" Text="UNAVAILABLE"></asp:Label>
+                            <asp:Label ID="Lbl_library_status" runat="server" Text="" Style="margin-left: 10px;"></asp:Label>
                         </div>
 
-                        <!--Time Zone-->
-                        <div class="time-date">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <!--Time Zone-->
+                                <div class="time-date">
 
-                            <!--Digital Clock-->
-                            <div class="digital-clock">
-                                <asp:Label ID="Lbl_current_time" runat="server" Text="00:00:00"></asp:Label><br />
-                            </div>
+                                    <!--Digital Clock-->
+                                    <div class="digital-clock">
+                                        <asp:Label ID="Lbl_current_time" runat="server" Text=""></asp:Label><br />
+                                    </div>
 
-                            <!--Date-->
-                            <div class="date">
-                                <asp:Label ID="Lbl_current_date" runat="server" Text="THURSDAY, MAY 25, 2023"></asp:Label>
-                            </div>
-                        </div>
+                                    <!--Date-->
+                                    <div class="date">
+                                        <asp:Label ID="Lbl_current_date" runat="server" Text=""></asp:Label>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+
+                        <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick"></asp:Timer>
 
                     </header>
-
 
                     <!--Inside Aside Left-->
                     <aside class="inside-aside-left-50">
