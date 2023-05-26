@@ -166,6 +166,30 @@
         border-radius: 10px;
     }
 
+.gridview-style {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .gridview-style th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .gridview-style td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .gridview-style tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .gridview-style tr:hover {
+        background-color: #e2e2e2;
+    }
 
 .std-timelog-display {
     margin-top: 10px;
@@ -312,13 +336,13 @@
         margin: auto;
     }
 
-    .footer-5 {
-        padding: 5px;
-        flex-basis: 100%;
-        background-color: #f1916d;
-        text-align: center;
-        color: #ffffff;
-    }
+.footer-5 {
+    padding: 5px;
+    flex-basis: 100%;
+    background-color: #f1916d;
+    text-align: center;
+    color: #ffffff;
+}
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {

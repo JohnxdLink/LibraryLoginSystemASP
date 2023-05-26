@@ -5,11 +5,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Data;
 
 namespace Library_Login_System.Views.Admins
 {
     public partial class admin_home : System.Web.UI.Page
     {
+
+        //Sql Connection
+        SqlConnection db_con = new SqlConnection("Data Source=ECCLESIASTES\\SQLEXPRESS;Integrated Security=True");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -90,6 +97,154 @@ namespace Library_Login_System.Views.Admins
             Response.Redirect("admin-home.aspx");
         }
 
+        protected void Img_browse_id_Click(object sender, ImageClickEventArgs e)
+        {
+            // SQL query to retrieve student information
+            string sqlQuery = "SELECT Id_no, Last_name, First_name, Course, School_year, Major FROM registration WHERE Id_no = @Id_no;";
+
+            string sqltimelogid = "SELECT COUNT(Time_out) FROM timelog WHERE Id_no = @Id_no";
+
+            string sqlshowtbl = "SELECT Timelog_id, Time_in, Time_out FROM timelog WHERE Id_no = @Id_no";
+
+            SqlCommand cmd = new SqlCommand(sqlQuery, db_con);
+            cmd.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
+
+            SqlCommand sqltimelog = new SqlCommand(sqltimelogid, db_con);
+            sqltimelog.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
+
+            SqlCommand sqltable = new SqlCommand(sqlshowtbl, db_con);
+            sqltable.Parameters.Add("@Id_no", SqlDbType.NVarChar, 50).Value = Txb_search_id.Text;
+
+            try
+            {
+                // Open the database connection
+                db_con.Open();
+                db_con.ChangeDatabase("Library_Login_Db");
+                SqlDataReader sqlreader = cmd.ExecuteReader();
+
+                if (sqlreader.Read())
+                {
+                    Img_student.ImageUrl = "~/Images/Student Images/" + sqlreader["Id_no"].ToString() + ".JPG";
+
+                    Lbl_std_id.Text = sqlreader["Id_no"].ToString();
+                    Lbl_std_id.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f5d7db");
+                    Lbl_std_name.Text = sqlreader["Last_name"].ToString() + " " + sqlreader["First_name"].ToString();
+                    Lbl_std_course.Text = sqlreader["Course"].ToString();
+
+                    // Convert the school year value to a displayable format
+                    string schoolYear = sqlreader["School_year"].ToString();
+                    string yearDisplay;
+                    switch (schoolYear)
+                    {
+                        case "1":
+                            yearDisplay = "1st Year";
+                            break;
+                        case "2":
+                            yearDisplay = "2nd Year";
+                            break;
+                        case "3":
+                            yearDisplay = "3rd Year";
+                            break;
+                        default:
+                            yearDisplay = schoolYear + "th Year";
+                            break;
+                    }
+
+                    Lbl_std_year.Text = yearDisplay;
+
+                    Lbl_std_major.Text = sqlreader["Major"].ToString();
+
+                    // Close the SqlDataReader
+                    sqlreader.Close();
+
+                    object usertimelog = sqltimelog.ExecuteScalar();
+
+                    if (usertimelog != null)
+                    {
+                        int count = Convert.ToInt32(usertimelog);
+                        Lbl_std_timelog.Text = count.ToString();
+                    }
+
+                    sqltimelog.Dispose();
+
+                    SqlDataReader dt_reader = null;
+
+                    try
+                    {
+                        dt_reader = sqltable.ExecuteReader();
+
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(dt_reader);
+
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            // Access the data in each row
+                            string timeIn = row["Time_in"].ToString();
+                            string timeOut = row["Time_out"].ToString();
+
+                            // Perform any necessary operations with the data
+                            // For example, you can display it or manipulate it further
+                        }
+
+                        GridView1.DataSource = dataTable;
+                        GridView1.DataBind();
+                    }
+                    finally
+                    {
+                        // Close the SqlDataReader and SqlConnection in the finally block
+                        if (dt_reader != null)
+                        {
+                            dt_reader.Close();
+                        }
+
+                        if (db_con.State != ConnectionState.Closed)
+                        {
+                            db_con.Close();
+                        }
+                    }
+
+                }
+                else
+                {
+                    Lbl_std_id.Text = "STUDENT DOES NOT EXISTS";
+                    Lbl_std_id.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ff0000");
+
+                    Lbl_std_name.Text = "";
+                    Lbl_std_course.Text = "";
+                    Lbl_std_year.Text = "";
+                    Lbl_std_major.Text = "";
+
+                    Lbl_std_timelog.Text = "";
+
+                    sqlreader.Close();
+
+                }
+
+                // Close the database connection
+                db_con.Close();
+
+            }
+            catch (SqlException sqlex)
+            {
+                Response.Write(sqlex);
+            }
+
+            finally
+            {
+                // Dispose the SqlCommand
+                cmd.Dispose();
+                sqltimelog.Dispose();
+
+                if (db_con.State != System.Data.ConnectionState.Closed)
+                {
+                    db_con.Close(); // Close the database connection if it is still open
+                }
+                db_con.Dispose(); // Dispose the SqlConnection
+            }
+
+
+        }
+
         protected void btn_register_Click(object sender, EventArgs e)
         {
             Response.Redirect("admin-register.aspx");
@@ -109,5 +264,7 @@ namespace Library_Login_System.Views.Admins
         {
             Response.Redirect("~/Views/library-home.aspx");
         }
+
+
     }
 }

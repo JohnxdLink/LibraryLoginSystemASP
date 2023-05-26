@@ -91,7 +91,7 @@
                             <!--Textbox Search & Browser Icon-->
                             <div class="srch-container" style="margin-bottom: 10px;">
                                 <asp:TextBox ID="Txb_search_id" runat="server" Style="margin-right: 10px;" ToolTip="Search ID" placeholder="Search ID"></asp:TextBox>
-                                <asp:ImageButton ID="Img_browse_id" runat="server" ImageUrl="~/Images/Icons/admin-browse.PNG" Height="40" Width="40" />
+                                <asp:ImageButton ID="Img_browse_id" runat="server" ImageUrl="~/Images/Icons/admin-browse.PNG" Height="40" Width="40" OnClick="Img_browse_id_Click" />
                             </div>
 
                             <!--Display The Search ID-->
@@ -105,19 +105,19 @@
                                 <!--Display Info Student-->
                                 <div class="student-info-container">
                                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Icons/admin-std-id.PNG" Height="30" Width="30" />
-                                    <asp:Label ID="Lbl_std_id" runat="server" Text="777000" CssClass="std-dsply-design"></asp:Label>
+                                    <asp:Label ID="Lbl_std_id" runat="server" Text="" CssClass="std-dsply-design"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Icons/admin-std-name.PNG" Height="30" Width="30" />
-                                    <asp:Label ID="Lbl_std_name" runat="server" Text="Castro John Christian" CssClass="std-dsply-design"></asp:Label>
+                                    <asp:Label ID="Lbl_std_name" runat="server" Text="" CssClass="std-dsply-design"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Icons/admin-std-course.PNG" Height="30" Width="30" />
-                                    <asp:Label ID="Lbl_std_course" runat="server" Text="BSIT" CssClass="std-dsply-design"></asp:Label>
+                                    <asp:Label ID="Lbl_std_course" runat="server" Text="" CssClass="std-dsply-design"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Icons/admin-std-year.PNG" Height="30" Width="30" />
-                                    <asp:Label ID="Lbl_std_year" runat="server" Text="1st Year" CssClass="std-dsply-design"></asp:Label>
+                                    <asp:Label ID="Lbl_std_year" runat="server" Text="" CssClass="std-dsply-design"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/Icons/admin-std-major.PNG" Height="30" Width="30" />
-                                    <asp:Label ID="Lbl_std_major" runat="server" Text="Info-Tech" CssClass="std-dsply-design"></asp:Label>
+                                    <asp:Label ID="Lbl_std_major" runat="server" Text="" CssClass="std-dsply-design"></asp:Label>
                                 </div>
                             </div>
                         </div>

@@ -49,8 +49,6 @@ CREATE TABLE timelog (
 		Timelog_id INT IDENTITY(0, 1) PRIMARY KEY,
 		Time_in TIME,
 		Time_out TIME,
-		First_Time_in TIME,
-		Last_Time_out TIME,
 		Date_log DATE
 );
 
@@ -58,5 +56,3 @@ INSERT INTO timelog(Id_no, Time_in, Date_log)
 VALUES(777000, FORMAT(GETDATE(), 'HH:mm:ss'), CONVERT(DATE, GETDATE()));
 
 */
-
-SELECT * FROM timelog;
