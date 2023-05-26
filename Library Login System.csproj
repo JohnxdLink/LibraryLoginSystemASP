@@ -96,6 +96,10 @@
     <Content Include="Images\Background\Background Login.jpg" />
     <Content Include="Images\Background\Background Register.jpg" />
     <Content Include="Images\Icons\admin-browse.PNG" />
+    <Content Include="Images\Icons\admin-call.PNG" />
+    <Content Include="Images\Icons\admin-facebook.png" />
+    <Content Include="Images\Icons\admin-github.PNG" />
+    <Content Include="Images\Icons\admin-notify.PNG" />
     <Content Include="Images\Icons\admin-registered.png" />
     <Content Include="Images\Icons\admin-std-course.png" />
     <Content Include="Images\Icons\admin-std-id.PNG" />
