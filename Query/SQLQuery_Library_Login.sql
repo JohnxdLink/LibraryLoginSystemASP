@@ -57,4 +57,4 @@ VALUES(777000, FORMAT(GETDATE(), 'HH:mm:ss'), CONVERT(DATE, GETDATE()));
 
 */
 
-SELECT * FROM timelog;
+SELECT COUNT(*) FROM registration;

@@ -25,6 +25,8 @@ namespace Library_Login_System.Views.Admins
                 Update_time();
                 Updated_user_Timelogin();
                 Updated_user_Timelogout();
+                Registered_count();
+                Monthly_count();
             }
             catch (Exception ex)
             {
@@ -38,6 +40,10 @@ namespace Library_Login_System.Views.Admins
             {
                 // Calls the method to update the time and date
                 Update_time();
+                Updated_user_Timelogin();
+                Updated_user_Timelogout();
+                Registered_count();
+                Monthly_count();
             }
             catch (Exception ex)
             {
@@ -359,6 +365,54 @@ namespace Library_Login_System.Views.Admins
                     db_con.Dispose();
                 }
             }
+        }
+
+        protected void Registered_count()
+        {
+            string sqlcount = "SELECT COUNT(*) FROM registration";
+
+            SqlCommand cmdcount = new SqlCommand(sqlcount, db_con);
+
+            try
+            {
+                db_con.Open();
+                db_con.ChangeDatabase("Library_Login_Db");
+
+                int count = (int)cmdcount.ExecuteScalar();
+                Lbl_num_registered.Text = count.ToString();
+            }
+            catch (SqlException sqlex)
+            {
+                Response.Write(sqlex);
+            }
+
+            db_con.Close();
+        }
+
+        protected void Monthly_count()
+        {
+            DateTime currentDate = DateTime.Now;
+            int currentMonth = currentDate.Month;
+            string nummonth = currentMonth.ToString();
+
+            string sqlcount = "SELECT COUNT(*) FROM timelog WHERE MONTH(Date_log) = " + nummonth + ";";
+
+            SqlCommand cmdcount = new SqlCommand(sqlcount, db_con);
+
+            try
+            {
+                db_con.Open();
+                db_con.ChangeDatabase("Library_Login_Db");
+
+                int count = (int)cmdcount.ExecuteScalar();
+                Lbl_num_timelog.Text = count.ToString();
+            }
+            catch (SqlException sqlex)
+            {
+                Response.Write(sqlex);
+            }
+
+            db_con.Close();
         }
 
 
