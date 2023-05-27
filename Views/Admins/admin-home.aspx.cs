@@ -23,6 +23,8 @@ namespace Library_Login_System.Views.Admins
             {
                 // Calls the method to update the time and date
                 Update_time();
+                Updated_user_Timelogin();
+                Updated_user_Timelogout();
             }
             catch (Exception ex)
             {
@@ -154,6 +156,8 @@ namespace Library_Login_System.Views.Admins
 
                     Lbl_std_major.Text = sqlreader["Major"].ToString();
 
+                    Lbl_last_name.Text = sqlreader["Last_name"].ToString() + " TIMELOG";
+
                     // Close the SqlDataReader
                     sqlreader.Close();
 
@@ -161,6 +165,8 @@ namespace Library_Login_System.Views.Admins
 
                     if (usertimelog != null)
                     {
+                        Timelog_icon_dsply.ImageUrl = "~/Images/Icons/timelog.png";
+
                         int count = Convert.ToInt32(usertimelog);
                         Lbl_std_timelog.Text = count.ToString();
                     }
@@ -244,6 +250,117 @@ namespace Library_Login_System.Views.Admins
 
 
         }
+
+        protected void Updated_user_Timelogin()
+        {
+            string sqlLatestTimelog = "SELECT TOP 1 Id_no, Time_in FROM timelog ORDER BY Timelog_id DESC";
+
+            SqlCommand cmdtimelog = null;
+            SqlDataReader dataReader = null;
+
+            try
+            {
+                db_con.Open();
+                db_con.ChangeDatabase("Library_Login_Db");
+
+                cmdtimelog = new SqlCommand(sqlLatestTimelog, db_con);
+
+                dataReader = cmdtimelog.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    Img_view_id_login.ImageUrl = "~/Images/Student Images/" + dataReader["Id_no"].ToString() + ".JPG";
+                    Lbl_view_id_login.Text = dataReader["Id_no"].ToString();
+                    Lbl_view_status_login.Text = "LOGGED IN";
+                    Lbl_view_status_login.ForeColor = System.Drawing.ColorTranslator.FromHtml("#00ff00");
+                    Lbl_check_login.ImageUrl = "~/Images/Icons/status-login.png";
+                }
+
+                dataReader.Close();
+
+                db_con.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                Response.Write(sqlex);
+            }
+            finally
+            {
+                // Ensure resources are properly closed and disposed
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    dataReader.Dispose();
+                }
+
+                if (cmdtimelog != null)
+                {
+                    cmdtimelog.Dispose();
+                }
+
+                if (db_con != null && db_con.State != ConnectionState.Closed)
+                {
+                    db_con.Close();
+                    db_con.Dispose();
+                }
+            }
+        }
+
+        protected void Updated_user_Timelogout()
+        {
+            string sqlLatestTimelog = "SELECT TOP 1 Id_no, Time_in, Time_out FROM timelog WHERE Time_out IS NOT NULL ORDER BY Timelog_id DESC";
+
+            SqlCommand cmdtimelog = null;
+            SqlDataReader dataReader = null;
+
+            try
+            {
+                db_con.Open();
+                db_con.ChangeDatabase("Library_Login_Db");
+
+                cmdtimelog = new SqlCommand(sqlLatestTimelog, db_con);
+
+                dataReader = cmdtimelog.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    // User has already logged out
+                    Img_view_id_logout.ImageUrl = "~/Images/Student Images/" + dataReader["Id_no"].ToString() + ".JPG";
+                    Lbl_view_id_logout.Text = dataReader["Id_no"].ToString();
+                    Lbl_view_status_logout.Text = "LOGGED OUT";
+                    Lbl_view_status_logout.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ff0000");
+                    Lbl_check_logout.ImageUrl = "~/Images/Icons/status-logout.png";
+                }
+
+                dataReader.Close();
+                db_con.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                Response.Write(sqlex);
+            }
+            finally
+            {
+                // Ensure resources are properly closed and disposed
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    dataReader.Dispose();
+                }
+
+                if (cmdtimelog != null)
+                {
+                    cmdtimelog.Dispose();
+                }
+
+                if (db_con != null && db_con.State != ConnectionState.Closed)
+                {
+                    db_con.Close();
+                    db_con.Dispose();
+                }
+            }
+        }
+
 
         protected void btn_register_Click(object sender, EventArgs e)
         {

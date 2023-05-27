@@ -258,13 +258,22 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_std_major;
 
         /// <summary>
-        /// Image6 control.
+        /// Lbl_last_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image6;
+        protected global::System.Web.UI.WebControls.Label Lbl_last_name;
+
+        /// <summary>
+        /// Timelog_icon_dsply control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Timelog_icon_dsply;
 
         /// <summary>
         /// Lbl_std_timelog control.
@@ -366,13 +375,13 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_num_timelog;
 
         /// <summary>
-        /// Image9 control.
+        /// Img_view_id_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image9;
+        protected global::System.Web.UI.WebControls.Image Img_view_id_login;
 
         /// <summary>
         /// Lbl_view_id_login control.
@@ -384,13 +393,13 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_view_id_login;
 
         /// <summary>
-        /// Image10 control.
+        /// Lbl_check_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image10;
+        protected global::System.Web.UI.WebControls.Image Lbl_check_login;
 
         /// <summary>
         /// Lbl_view_status_login control.
@@ -402,13 +411,13 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_view_status_login;
 
         /// <summary>
-        /// Image11 control.
+        /// Img_view_id_logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image11;
+        protected global::System.Web.UI.WebControls.Image Img_view_id_logout;
 
         /// <summary>
         /// Lbl_view_id_logout control.
@@ -420,22 +429,22 @@ namespace Library_Login_System.Views.Admins
         protected global::System.Web.UI.WebControls.Label Lbl_view_id_logout;
 
         /// <summary>
-        /// Image12 control.
+        /// Lbl_check_logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image12;
+        protected global::System.Web.UI.WebControls.Image Lbl_check_logout;
 
         /// <summary>
-        /// Lbl_view_logout control.
+        /// Lbl_view_status_logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_view_logout;
+        protected global::System.Web.UI.WebControls.Label Lbl_view_status_logout;
 
         /// <summary>
         /// Img_btn_call control.

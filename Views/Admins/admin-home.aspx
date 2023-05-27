@@ -90,7 +90,7 @@
 
                             <!--Textbox Search & Browser Icon-->
                             <div class="srch-container" style="margin-bottom: 10px;">
-                                <asp:TextBox ID="Txb_search_id" runat="server" Style="margin-right: 10px;" ToolTip="Search ID" placeholder="Search ID"></asp:TextBox>
+                                <asp:TextBox ID="Txb_search_id" runat="server" Style="margin-right: 10px;" ToolTip="Search ID" placeholder="Search ID" ForeColor="#F1916D"></asp:TextBox>
                                 <asp:ImageButton ID="Img_browse_id" runat="server" ImageUrl="~/Images/Icons/admin-browse.PNG" Height="40" Width="40" OnClick="Img_browse_id_Click" />
                             </div>
 
@@ -125,14 +125,18 @@
 
                     <!--Inside Aside Right-->
                     <aside class="inside-aside-right-50">
+                        <div class="text-user-display">
+                            <asp:Label ID="Lbl_last_name" runat="server" Text="" Style="font-family: 'Bebas Neue'; font-size: 25px; color: #f1916d;"></asp:Label>
+                        </div>
+
                         <div class="std-timelog">
                             <div class="std-timelog-display">
-                                <asp:Image ID="Image6" runat="server" Height="70" Width="70" ImageUrl="~/Images/Icons/timelog.png" />
-                                <asp:Label ID="Lbl_std_timelog" runat="server" Text="00" Style="font-family: 'Bebas Neue'; font-size: 50px;"></asp:Label>
+                                <asp:Image ID="Timelog_icon_dsply" runat="server" Height="70" Width="70" />
+                                <asp:Label ID="Lbl_std_timelog" runat="server" Text="" Style="font-family: 'Bebas Neue'; font-size: 50px; color: #f5d7db; margin-left: 10px;"></asp:Label>
                             </div>
 
-                            <div class="std-timelog-data">
-                                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                            <div class="std-timelog-data" style="margin-top: 15px; margin-left: 15px; height: 90px; overflow: auto; margin-right: 10px;">
+                                <asp:GridView ID="GridView1" runat="server" Font-Names="Arial" Font-Size="14" AlternatingRowStyle-BackColor="#06142e" HeaderStyle-BackColor="#06142E" HeaderStyle-ForeColor="#F5D7DB" ForeColor="#F1916D"></asp:GridView>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                             </div>
                         </div>
@@ -146,17 +150,17 @@
                     <aside class="inside-footer-left-50">
 
                         <div class="text-register">
-                            <asp:Label ID="Label1" runat="server" Text="REGISTERED STUDENT" Style="font-family: 'Bebas Neue'; font-size: 25px; margin-left: 10px;"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="REGISTERED STUDENT" Style="font-family: 'Bebas Neue'; font-size: 25px; margin-left: 10px; color: #f1916d;"></asp:Label>
                         </div>
 
                         <div class="registered-design">
                             <asp:Image ID="Image7" runat="server" ImageUrl="~/Images/Icons/admin-registered.png" />
-                            <asp:Label ID="Lbl_num_registered" runat="server" Text="00" Style="font-family: 'Bebas Neue'; font-size: 50px;"></asp:Label>
+                            <asp:Label ID="Lbl_num_registered" runat="server" Text="00" Style="font-family: 'Bebas Neue'; font-size: 50px; color: #f5d7db; margin-left: 15px;"></asp:Label>
                         </div>
 
                         <div class="register-notify" style="margin-left: 10px;">
                             <asp:Image ID="Image13" runat="server" ImageUrl="~/Images/Icons/admin-notify.PNG" Height="20" Width="20" />
-                            <asp:Label ID="Lbl_std_add_notify" runat="server" Text="NO STUDENT ADDED " Style="font-family: 'Bebas Neue'; font-size: 15px;"></asp:Label>
+                            <asp:Label ID="Lbl_std_add_notify" runat="server" Text="NO STUDENT ADDED " Style="font-family: 'Bebas Neue'; font-size: 15px; color: #f1916d;"></asp:Label>
                         </div>
                     </aside>
 
@@ -165,12 +169,12 @@
                     <aside class="inside-footer-right-50">
 
                         <div class="text-register">
-                            <asp:Label ID="Label2" runat="server" Text="MONTHLY TIMELOG" Style="font-family: 'Bebas Neue'; font-size: 25px; margin-left: 10px;"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="MONTHLY TIMELOG" Style="font-family: 'Bebas Neue'; font-size: 25px; margin-left: 10px; color: #f1916d;"></asp:Label>
                         </div>
 
                         <div class="timelog-design">
                             <asp:Image ID="Image8" runat="server" ImageUrl="~/Images/Icons/timelog.png" />
-                            <asp:Label ID="Lbl_num_timelog" runat="server" Text="00" Style="font-family: 'Bebas Neue'; font-size: 50px;"></asp:Label>
+                            <asp:Label ID="Lbl_num_timelog" runat="server" Text="00" Style="font-family: 'Bebas Neue'; font-size: 50px; color: #f5d7db; margin-left: 15px;"></asp:Label>
                         </div>
                     </aside>
                 </footer>
@@ -180,31 +184,31 @@
             <aside class="aside-right-25">
                 <div class="view-login">
                     <div class="view-img-login">
-                        <asp:Image ID="Image9" runat="server" Height="170" Width="170" Style="margin-top: 10px;" />
+                        <asp:Image ID="Img_view_id_login" runat="server" Height="170" Width="170" Style="margin-top: 10px; margin-bottom: 10px;" />
                     </div>
 
                     <div class="view-id-login">
-                        <asp:Label ID="Lbl_view_id_login" runat="server" Text="777000" Style="font-family: 'Bebas Neue'; font-size: 30px;"></asp:Label>
+                        <asp:Label ID="Lbl_view_id_login" runat="server" Text="" Style="font-family: 'Bebas Neue'; font-size: 30px; color: #f1916d;"></asp:Label>
                     </div>
 
                     <div class="view-status-login">
-                        <asp:Image ID="Image10" runat="server" Height="30px" Width="30px" Style="margin-right: 10px;" ImageUrl="~/Images/Icons/status-login.png" />
-                        <asp:Label ID="Lbl_view_status_login" runat="server" Text="LOGGED IN" Style="color: #00ff00; font-family: 'Bebas Neue'; font-size: 20px;"></asp:Label>
+                        <asp:Image ID="Lbl_check_login" runat="server" Height="30px" Width="30px" Style="margin-right: 10px;" />
+                        <asp:Label ID="Lbl_view_status_login" runat="server" Text="" Style="font-family: 'Bebas Neue'; font-size: 20px;"></asp:Label>
                     </div>
                 </div>
 
                 <div class="view-logout">
                     <div class="view-img-logout">
-                        <asp:Image ID="Image11" runat="server" Height="170" Width="170" Style="margin-top: 10px;" />
+                        <asp:Image ID="Img_view_id_logout" runat="server" Height="170" Width="170" Style="margin-top: 10px; margin-bottom: 10px;" />
                     </div>
 
                     <div class="view-id-logout">
-                        <asp:Label ID="Lbl_view_id_logout" runat="server" Text="777000" Style="font-family: 'Bebas Neue'; font-size: 30px;"></asp:Label>
+                        <asp:Label ID="Lbl_view_id_logout" runat="server" Text="" Style="font-family: 'Bebas Neue'; font-size: 30px; color: #f1916d;"></asp:Label>
                     </div>
 
                     <div class="view-status-logout">
-                        <asp:Image ID="Image12" runat="server" Height="30px" Width="30px" Style="margin-right: 10px;" ImageUrl="~/Images/Icons/status-logout.png" />
-                        <asp:Label ID="Lbl_view_logout" runat="server" Text="LOGGED OUT" Style="color: #ff0000; font-family: 'Bebas Neue'; font-size: 20px;"></asp:Label>
+                        <asp:Image ID="Lbl_check_logout" runat="server" Height="30px" Width="30px" Style="margin-right: 10px;" />
+                        <asp:Label ID="Lbl_view_status_logout" runat="server" Text="LOGGED OUT" Style="color: #ff0000; font-family: 'Bebas Neue'; font-size: 20px;"></asp:Label>
                     </div>
                 </div>
 

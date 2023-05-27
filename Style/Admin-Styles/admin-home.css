@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    color: #f1916d;
+    
 }
 
 /* Define the styles for the layout */
@@ -139,57 +139,9 @@
 
 .inside-aside-right-50 {
     margin-top: 10px;
-    flex-basis: 36%;
+    flex-basis: 40%;
     height: 220px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
 }
-
-    .inside-aside-right-50::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 2px solid transparent;
-        opacity: 0;
-        transition: all 0.3s ease;
-        border-radius: 10px;
-    }
-
-    .inside-aside-right-50:hover::before {
-        border-color: #f1916d;
-        opacity: 1;
-        box-shadow: 0 0 10px 5px #f1916d;
-        border-radius: 10px;
-    }
-
-.gridview-style {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-    .gridview-style th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-        text-align: left;
-        padding: 8px;
-    }
-
-    .gridview-style td {
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .gridview-style tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    .gridview-style tr:hover {
-        background-color: #e2e2e2;
-    }
 
 .std-timelog-display {
     margin-top: 10px;
