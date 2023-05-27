@@ -190,6 +190,10 @@
 
             <aside class="aside-right-25" id="aside-container">
 
+                <div class="live-container" style="margin-top: 10px;">
+                    <asp:Label ID="Label3" runat="server" Text="LIVE VIEW " Style="margin-left: 10px; font-family: 'Bebas Neue'; font-size: 25px; color: #f1916d;"></asp:Label>
+                </div>
+
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         <asp:Timer ID="Timer2" runat="server" Interval="1000" OnTick="Timer1_Tick"></asp:Timer>
