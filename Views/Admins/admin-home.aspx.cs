@@ -21,7 +21,7 @@ namespace Library_Login_System.Views.Admins
         {
             try
             {
-                // Calls the method to update the time and date
+                // Calls the method to update the time and date, tmelog in & out, registered count and monthly
                 Update_time();
                 Updated_user_Timelogin();
                 Updated_user_Timelogout();
@@ -34,6 +34,7 @@ namespace Library_Login_System.Views.Admins
             }
         }
 
+        // This method is executed periodically and performs various tasks related to updating time, user timelogin, user timelogout, registered count, and monthly count.
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             try
@@ -51,9 +52,6 @@ namespace Library_Login_System.Views.Admins
             }
         }
 
-        /*
-         Timer1_Tick updates time & date by calling UpdateTime method, which formats the current time using ToString method, and refreshes the labels.
-         */
         private void Update_time()
         {
             var now = DateTime.Now;
@@ -83,9 +81,7 @@ namespace Library_Login_System.Views.Admins
 
         private bool IsSystemOnline(DateTime now)
         {
-            // Implement your logic to determine if the system is online.
-            // You can check connectivity or any other criteria specific to your system.
-            // For demonstration purposes, let's assume the system is always online.
+
             return true;
         }
 
@@ -110,8 +106,10 @@ namespace Library_Login_System.Views.Admins
             // SQL query to retrieve student information
             string sqlQuery = "SELECT Id_no, Last_name, First_name, Course, School_year, Major FROM registration WHERE Id_no = @Id_no;";
 
+            // Execute the query to get the count of Time_out entries for the given Id_no
             string sqltimelogid = "SELECT COUNT(Time_out) FROM timelog WHERE Id_no = @Id_no";
 
+            // Execute the query to retrieve Timelog_id, Time_in, and Time_out for the given Id_no
             string sqlshowtbl = "SELECT Timelog_id, Time_in, Time_out FROM timelog WHERE Id_no = @Id_no";
 
             SqlCommand cmd = new SqlCommand(sqlQuery, db_con);
@@ -179,13 +177,18 @@ namespace Library_Login_System.Views.Admins
 
                     sqltimelog.Dispose();
 
+                    // Initialize a SqlDataReader variable to store the query results
                     SqlDataReader dt_reader = null;
 
                     try
                     {
+                        // Execute the query and store the results in the SqlDataReader
                         dt_reader = sqltable.ExecuteReader();
 
+                        // Initialize a DataTable to store the query results
                         DataTable dataTable = new DataTable();
+
+                        // Load the data from the SqlDataReader into the DataTable
                         dataTable.Load(dt_reader);
 
                         foreach (DataRow row in dataTable.Rows)
@@ -193,12 +196,12 @@ namespace Library_Login_System.Views.Admins
                             // Access the data in each row
                             string timeIn = row["Time_in"].ToString();
                             string timeOut = row["Time_out"].ToString();
-
-                            // Perform any necessary operations with the data
-                            // For example, you can display it or manipulate it further
                         }
-
+                   
+                        // Set the DataTable as the data source for the GridView
                         GridView1.DataSource = dataTable;
+
+                        // Bind the DataTable to the GridView for displaying the data
                         GridView1.DataBind();
                     }
                     finally
@@ -253,8 +256,6 @@ namespace Library_Login_System.Views.Admins
                 }
                 db_con.Dispose(); // Dispose the SqlConnection
             }
-
-
         }
 
         protected void Updated_user_Timelogin()
@@ -369,6 +370,7 @@ namespace Library_Login_System.Views.Admins
 
         protected void Registered_count()
         {
+            // SQL query to count the number of rows in the "registration" table
             string sqlcount = "SELECT COUNT(*) FROM registration";
 
             SqlCommand cmdcount = new SqlCommand(sqlcount, db_con);
@@ -378,7 +380,10 @@ namespace Library_Login_System.Views.Admins
                 db_con.Open();
                 db_con.ChangeDatabase("Library_Login_Db");
 
+                // Execute the query and retrieve the count as a scalar value
                 int count = (int)cmdcount.ExecuteScalar();
+
+                // Convert the count to a string and display it in the "Lbl_num_registered" label
                 Lbl_num_registered.Text = count.ToString();
             }
             catch (SqlException sqlex)
@@ -391,10 +396,16 @@ namespace Library_Login_System.Views.Admins
 
         protected void Monthly_count()
         {
+            // Get the current date and time
             DateTime currentDate = DateTime.Now;
+
+            // Get the current month as an integer
             int currentMonth = currentDate.Month;
+
+            // Convert the current month to a string.
             string nummonth = currentMonth.ToString();
 
+            // SQL query to count the number of rows in the "timelog" table for the current month
             string sqlcount = "SELECT COUNT(*) FROM timelog WHERE MONTH(Date_log) = " + nummonth + ";";
 
             SqlCommand cmdcount = new SqlCommand(sqlcount, db_con);
@@ -404,7 +415,10 @@ namespace Library_Login_System.Views.Admins
                 db_con.Open();
                 db_con.ChangeDatabase("Library_Login_Db");
 
+                // Execute the query and retrieve the count as a scalar value
                 int count = (int)cmdcount.ExecuteScalar();
+
+                // Convert the count to a string and display it in the "Lbl_num_timelog" label
                 Lbl_num_timelog.Text = count.ToString();
             }
             catch (SqlException sqlex)

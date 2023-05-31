@@ -216,6 +216,7 @@ namespace Library_Login_System.Views
 
                     SqlDataReader timeoutReader = checkTimeoutCmd.ExecuteReader();
 
+                    // Checks if the timeoutReader has any rows and if the value in the first column is not null. If both conditions are true, it means that the Time_out value is already set in the database, indicating that the user has already logged out
                     if (timeoutReader.Read() && !timeoutReader.IsDBNull(0))
                     {
                         // Time_out value is already set, indicating that the user has already logged out
