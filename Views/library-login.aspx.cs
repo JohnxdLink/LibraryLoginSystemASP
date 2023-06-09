@@ -12,6 +12,12 @@ namespace Library_Login_System.Views
 {
     public partial class library_login : System.Web.UI.Page
     {
+        /*
+         * Project: Library Login System
+         * Developer: Castro John Christian
+         * Message: StoryVerse: "Where Words Come Alive"
+         * Date Created: 05/10-16/2023    
+         */
 
         //Sql Connection
         SqlConnection db_con = new SqlConnection("Data Source=ECCLESIASTES\\SQLEXPRESS;Integrated Security=True");
