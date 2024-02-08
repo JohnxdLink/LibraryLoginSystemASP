@@ -103,14 +103,14 @@
                             <asp:Label ID="Lbl_id_login" runat="server" Text="" CssClass="lbl_user_log"></asp:Label>
                         </div>
 
-                         <!--Name Notification-->
+                        <!--Name Notification-->
                         <div>
                             <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/Icons/name.png" CssClass="login_form_icons" />
                             <asp:Label ID="Lbl_name_login" runat="server" Text="" CssClass="lbl_user_log"></asp:Label>
                         </div>
 
 
-                         <!--Course & Year Notification-->
+                        <!--Course & Year Notification-->
                         <div>
                             <asp:Image ID="Image6" runat="server" ImageUrl="~/Images/Icons/course.png" CssClass="login_form_icons" />
                             <asp:Label ID="Lbl_course_login" runat="server" Text="" CssClass="lbl_user_log" Style="width: 180px;"></asp:Label>
@@ -118,7 +118,7 @@
                             <asp:Label ID="Lbl_year_login" runat="server" Text="" CssClass="lbl_user_log"></asp:Label>
                         </div>
 
-                         <!--Time-in Notification-->
+                        <!--Time-in Notification-->
                         <div>
                             <asp:Image ID="Login_timelog_Notify" runat="server" ImageUrl="~/Images/Icons/timelog.png" Width="50" Height="50" />
                             <asp:Label ID="Lbl_timein" runat="server" Text="" Font-Names="Bebas Neue" Font-Size="35" ForeColor="#4CFF00"></asp:Label>

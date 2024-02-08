@@ -83,7 +83,7 @@ namespace Library_Login_System.Views
         {
             // Define the working hours (7am to 5pm)
             TimeSpan startWorkingHours = new TimeSpan(7, 0, 0);
-            TimeSpan endWorkingHours = new TimeSpan(17, 0, 0);
+            TimeSpan endWorkingHours = new TimeSpan(23, 0, 0);
 
             // Check if the current time is within the working hours
             TimeSpan currentTime = now.TimeOfDay;

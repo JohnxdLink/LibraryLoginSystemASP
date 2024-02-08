@@ -20,7 +20,7 @@ namespace Library_Login_System.Views
          */
 
         //Sql Connection
-        SqlConnection db_con = new SqlConnection("Data Source=ECCLESIASTES\\SQLEXPRESS;Integrated Security=True");
+        SqlConnection db_con = new SqlConnection("Data Source=ECCLESIASTES\\SQLEXPRESS;Initial Catalog=Library_Login_Db;User ID=ustyroid;Password=2315");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace Library_Login_System.Views
                 // Check if the current time is outside the allowed hours (7am - 5pm)
                 DateTime currentTime = DateTime.Now;
                 TimeSpan startTime = new TimeSpan(7, 0, 0); // 7am
-                TimeSpan endTime = new TimeSpan(17, 0, 0); // 5pm
+                TimeSpan endTime = new TimeSpan(23, 0, 0); // 5pm
 
                 if (currentTime.TimeOfDay < startTime || currentTime.TimeOfDay > endTime)
                 {
